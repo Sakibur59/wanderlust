@@ -10,6 +10,7 @@ const Navbar = () => {
                 <li className='font-bold'><Link href="/">Home</Link></li>
                 <li className='font-bold'><Link href="/destination">Destinations</Link></li>
                 <li className='font-bold'><Link href="/my-bookings">My Bookings</Link></li>
+                <li className='font-bold'><Link href="/add-destination">Add Destination</Link></li>
             </ul>
             <div>
                 <Image src={'/assets/Wanderlast.png'} alt="Logo" width={150} height={150} />
