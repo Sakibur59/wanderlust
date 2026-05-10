@@ -1,11 +1,13 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaRegCalendar } from "react-icons/fa";
 import { LuMap, LuMapPin } from "react-icons/lu";
+import { MdArrowOutward } from "react-icons/md";
 
 const DestinationCard = ({ destination }) => {
-  const { destinationName, country,imageUrl, price, duration } =
+  const { _id, destinationName, country,imageUrl, price, duration } =
     destination;
   return (
     <div className="border mb-8 rounded-lg  shadow-lg">
@@ -35,8 +37,9 @@ const DestinationCard = ({ destination }) => {
             <h3 className="text-lg font-semibold">${price}</h3>
           </div>
         </div>
+      
+        <Link href={`/destinations/${_id}`}><Button variant="ghost" className="mt-3 text-cyan-500 ">Read More<MdArrowOutward /></Button></Link>
       </div>
-      <Button className="mb-4">Read More</Button>
     </div>
   );
 };
