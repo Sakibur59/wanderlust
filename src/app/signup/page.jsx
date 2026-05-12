@@ -33,8 +33,8 @@ const SignUpPage = () => {
     }
 
     if (error) {
-      // toast
-      alert("Error");
+      
+      alert(error.message);
     }
   };
 
