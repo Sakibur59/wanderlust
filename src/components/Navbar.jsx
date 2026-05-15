@@ -14,7 +14,8 @@ const Navbar = () => {
     await authClient.signOut();
   };
   return (
-    <nav className="flex justify-between p-4 bg-white">
+    <div className="p-4 bg-white">
+      <nav className="flex justify-between  max-w-7xl mx-auto">
       <ul className="flex gap-2">
         <li className="font-bold">
           <Link href="/">Home</Link>
@@ -58,7 +59,7 @@ const Navbar = () => {
               {user.name}
             </li>
             <li>
-              <Button
+              <Button size="sm"
                 onClick={handleSignOut}
                 variant="danger"
                 className={"rounded-none"}
@@ -79,6 +80,7 @@ const Navbar = () => {
         )}
       </ul>
     </nav>
+    </div>
   );
 };
 
