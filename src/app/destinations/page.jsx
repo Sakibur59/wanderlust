@@ -2,7 +2,7 @@ import DestinationCard from "@/components/DestinationCard";
 import Image from "next/image";
 
 const DestinationPage = async () => {
-  const res = await fetch("http://localhost:5000/destination");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`);
   const destinations = await res.json();
   return (
     <div className="mt-20">
