@@ -29,12 +29,12 @@ const LoginPage = () => {
     console.log({ data, error });
 
     if (data) {
+      toast.success("Logged in successfully!");
       redirect("/");
     }
 
     if (error) {
-      // toast
-      alert("Error");
+      toast.error("Error logging in!");
     }
   };
 
