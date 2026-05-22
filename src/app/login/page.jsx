@@ -13,6 +13,7 @@ import {
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {

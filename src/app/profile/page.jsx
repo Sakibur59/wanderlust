@@ -3,13 +3,14 @@
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button, Card } from "@heroui/react";
 import React from "react";
+
 import { LuMail, LuUser, LuCalendar, LuLogOut } from "react-icons/lu";
 
 const ProfilePage = () => {
-  const { data: session } = authClient.useSession();
-
-  const user = session?.user;
-
+    const { data: session } = authClient.useSession();
+    
+    const user = session?.user;
+   
   const handleLogout = async () => {
     await authClient.signOut();
   };
@@ -21,6 +22,7 @@ const ProfilePage = () => {
       </div>
     );
   }
+
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4">
@@ -34,9 +36,7 @@ const ProfilePage = () => {
                 alt={user?.name}
                 referrerPolicy="no-referrer"
               />
-              <Avatar.Fallback>
-                {user?.name?.charAt(0)}
-              </Avatar.Fallback>
+              <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
             </Avatar>
 
             <div>
@@ -44,15 +44,11 @@ const ProfilePage = () => {
               <p className="text-gray-500 mt-1">{user?.email}</p>
 
               <div className="flex gap-3 mt-4 flex-wrap">
-                <Button color="primary" variant="flat">
+                <Button  color="primary" variant="flat">
                   Edit Profile
                 </Button>
 
-                <Button
-                  color="danger"
-                  variant="flat"
-                  onClick={handleLogout}
-                >
+                <Button color="danger" variant="flat" onClick={handleLogout}>
                   Logout
                 </Button>
               </div>
@@ -69,7 +65,7 @@ const ProfilePage = () => {
                 <LuUser className="text-xl text-cyan-500" />
                 <div>
                   <p className="text-sm text-gray-500">Full Name</p>
-                  <h3 className="font-semibold">{user?.name}</h3>
+                  <h3 className="font-semibold" >{user?.name}</h3>
                 </div>
               </div>
             </div>
